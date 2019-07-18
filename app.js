@@ -12,7 +12,7 @@ const generateCpuChoice = () => {
 }
 
 const getWinner = (userChoice, cpuChoice) => {
-  if (userChoice.toLowerCase() === cpuChoice.toLowerCase()) {
+  if (userChoice === cpuChoice) {
     console.log(`It's a tie. Let's try again.`)
     return initialPrompt()
   } else if (
@@ -34,19 +34,19 @@ const newGame = () => {
     if (answer.match(/^r(ock)?$/ig)) {
       console.log('You chose Rock')
       console.log(`CPU chose ${ cpuChoice }`)
-      const winner = getWinner('rock', cpuChoice)
+      const winner = getWinner('Rock', cpuChoice)
       if (winner) console.log(winner)
       initialPrompt()
     } else if (answer.match(/^p(aper)?$/i)) {
       console.log('You chose Paper')
       console.log(`CPU chose ${ cpuChoice }`)
-      const winner = getWinner('paper', cpuChoice)
+      const winner = getWinner('Paper', cpuChoice)
       if (winner) console.log(winner)
       initialPrompt()
     } else if (answer.match(/^s(cissors)?$/i)) {
       console.log('You chose Scissors')
       console.log(`CPU chose ${ cpuChoice }`)
-      const winner = getWinner('scissors', cpuChoice)
+      const winner = getWinner('Scissors', cpuChoice)
       if (winner) console.log(winner)
       initialPrompt()
     } else {
